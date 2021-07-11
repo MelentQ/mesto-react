@@ -1,0 +1,11 @@
+import React from 'react';
+
+function Footer(props) {
+  return(
+    <footer className="footer section">
+      <p className="footer__copyright">&copy; 2021 Mesto Russia</p>
+    </footer>
+  )
+}
+
+export  default  Footer;
