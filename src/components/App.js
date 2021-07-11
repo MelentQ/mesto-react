@@ -60,22 +60,20 @@ function App() {
         name={'edit'}
         submitBtnText={'Сохранить'}
         title={'Редактировать профиль'}
-        children={(
-          <>
-            <div className="input__field">
-              <input type="text" name="name" id="name-input" placeholder="Ваше имя" className="input__text input__text_type_name" required minLength="2" maxLength="40"/>
-              <span className="input__text-error" id="name-input-error"/>
-            </div>
-
-            <div className="input__field">
-              <input type="text" name="activity" id="activity-input" placeholder="Чем вы занимаетесь" className="input__text input__text_type_activity" required minLength="2" maxLength="200"/>
-              <span className="input__text-error" id="activity-input-error"/>
-            </div>
-          </>
-        )}
         isOpen={isEditProfilePopupOpen}
         onClose={closeAllPopups}
-      />
+      >
+        <div className="input__field">
+          <input type="text" name="name" id="name-input" placeholder="Ваше имя" className="input__text input__text_type_name" required minLength="2" maxLength="40"/>
+          <span className="input__text-error" id="name-input-error"/>
+        </div>
+
+        <div className="input__field">
+          <input type="text" name="activity" id="activity-input" placeholder="Чем вы занимаетесь" className="input__text input__text_type_activity" required minLength="2" maxLength="200"/>
+          <span className="input__text-error" id="activity-input-error"/>
+        </div>
+
+      </PopupWithForm>
 
       <PopupWithForm
         name={'avatar'}
