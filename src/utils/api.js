@@ -100,34 +100,16 @@ class Api {
     .then(this._handleResponse)
   }
 
-  /**
-   * Лайк карточки
-   * @param {*} cardId - идентификатор карточки
-   * @returns Возвращает готовый объект с данными карточки
-   */
-  likeCard(cardId) {
-    return fetch(`${this._address}/cards/likes/${cardId}`, {
-      method: 'PUT',
-      headers: {
-        authorization: this._token
-      }
-    })
-    .then(this._handleResponse)
-  }
+  changeLikeCardStatus(cardId, isLiked) {
+    const method = isLiked ? 'PUT' : 'DELETE';
 
-  /**
-   * Убирает лайк с карточки
-   * @param {*} cardId - идентификатор карточки
-   * @returns Возвращает готовый объект с данными карточки
-   */
-  removeLikeFromCard(cardId) {
     return fetch(`${this._address}/cards/likes/${cardId}`, {
-      method: 'DELETE',
+      method: method,
       headers: {
         authorization: this._token
       }
     })
-    .then(this._handleResponse)
+      .then(this._handleResponse)
   }
 
   /**
